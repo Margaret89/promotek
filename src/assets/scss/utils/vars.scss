@@ -1,0 +1,29 @@
+//Path
+$path-img: "../img";
+$path-fonts: "../fonts";
+
+//Font
+$font-site: 'TT Norms', Arial, sans-serif;
+
+// Site
+$color-text: #000;
+$color-blue: #2351ad;
+$color-blue-hover: #4170cc;
+$color-light-blue: #ebf0fa;
+$color-light-grey: #dbdbdb;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1240px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
