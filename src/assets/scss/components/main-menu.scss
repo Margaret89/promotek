@@ -1,0 +1,141 @@
+/*-------------- main-menu -----------------*/
+.nav{
+	position: relative;
+	.col-12{position: static;}
+}
+
+.main-menu{
+	&__list,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__item::before,
+	&__sub-item::before{
+		display: none;
+	}
+
+	&__list{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item{position: relative;}
+	&__item_no-pos{position: static;}
+
+	&__link{
+		display: inline-block;
+		vertical-align: top;
+		@include font(normal, normal, 1.8rem, 1.2, $color-blue);
+		text-decoration: none;
+		padding: 19px 24px;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__item.active &__link,
+	&__link:hover{
+		background: $color-blue;
+		color: #fff;
+	}
+
+	&__sub{
+		display: none;
+		min-width: 200px;
+		background: $color-blue;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+	}
+
+	&__sub-link{
+		display: block;
+		@include font(normal, normal, 1.6rem, 1.2, #fff);
+		text-decoration: none;
+		padding: 10px 15px;
+		transition: background 0.2s ease 0s;
+	}
+
+	&__sub-link.active,
+	&__sub-link:hover{
+		background: $color-blue-hover;
+	}
+
+	&__item:hover .cat-menu-wrap,
+	&__item:hover &__sub{
+		display: block;
+	}
+}
+
+.cat-menu-wrap{
+	display: none;
+	padding: 32px 0;
+	background: $color-blue;
+	color: #fff;
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 10;
+}
+
+.cat-menu{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	&__item{
+		width: calc(25% - 30px);
+		margin: 18px 15px;
+	}
+
+	&__item::before{display: none;}
+
+	&__link{
+		@include font(normal, bold, 2rem, 1.5, #fff);
+		transition: color 0.2s ease 0s;
+	}
+
+	&__sub{margin-top: 12px;}
+
+	&__sub-item{
+		padding-left: 20px;
+		margin-bottom: 6px;
+	}
+
+	&__sub-item::before{
+		content: '»';
+		width: auto;
+		height: auto;
+		background: transparent;
+		@include font(normal, bold, 1.4rem, 1, #fff);
+		margin-right: 10px;
+	}
+
+
+	&__sub-link{
+		@include font(normal, normal, 1.6rem, 1.375, #fff);
+		transition: color 0.2s ease 0s;
+	}
+
+	&__item.active &__link,
+	&__link:hover,
+	&__sub-item.active &__sub-link,
+	&__sub-link:hover{
+		color: $color-yellow;
+	}
+}

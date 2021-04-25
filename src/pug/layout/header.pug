@@ -1,4 +1,132 @@
 header.header
-	.container
-		.row
-			.col-12 header
+	.header-top
+		.container
+			.row
+				.col-12
+					.header-top__content
+						.header-top__logo-wrap
+							.header-top__logo
+								a(href="#")
+									img(src="assets/img/logo.png", alt="")
+
+							.header-top__slogan Завод по производству ёмкостей из стеклопластика
+
+						.header-top__contact
+							.header-phone
+								.header-phone__icon
+									+svg('ic-call','ic-call', '18', '18')
+
+								a(href="tel:+78123090040") +7 (812) 309-00-40,
+								| 
+								a(href="tel:+74997034003") +7 (499) 703-40-03
+
+							.header-top__mail
+								a(href="mailto:info@promo-tek.ru") info@promo-tek.ru
+
+							.header-top__feadback
+								a(href="#") Обратный звонок
+
+	.nav
+		.container
+			.row
+				.col-12
+					nav.main-menu
+						ul.main-menu__list
+							-
+								var list=[
+									{
+										text:'О компании',
+										submenu:[
+											{text:'Тест 1'},
+											{text:'Тест 2'},
+											{text:'Тест 3'},
+										]
+									},
+									{text:'Продукция', catalog:'true'},
+									{text:'Скидки', status:'active'},
+									{text:'Отгрузки'},
+									{text:'Доставка'},
+									{text:'Новости'},
+									{text:'Вакансии'},
+									{text:'Контакты'},
+								]
+
+							each item in list
+								li.main-menu__item(class=item.status?'active':item.catalog?'main-menu__item_no-pos':'')
+									a(href="#").main-menu__link= item.text
+
+									if(item.submenu)
+										ul.main-menu__sub
+											each submenu in item.submenu
+												li.main-menu__sub-item
+													a(href="#").main-menu__sub-link= submenu.text
+
+									if(item.catalog)
+										.cat-menu-wrap
+											.container
+												.row
+													.col-12
+														ul.cat-menu
+															-
+																var catalog=[
+																	{
+																		text:'Емкости',
+																		sub:[
+																			{text:'Накопительные', status:'active'},
+																			{text:'Пожарные'},
+																			{text:'Топливные'},
+																			{text:'Химстойкие'},
+																			{text:'Для питьевой воды'},
+																		]
+																	},
+																	{
+																		text:'Ливневые очистные сооружения',
+																		sub:[
+																			{text:'Комплексные системы очистки'},
+																			{text:'Пескоотделители'},
+																			{text:'Маслобензоотделители'},
+																			{text:'Сорбционные блоки'},
+																			{text:'Блоки УФО'},
+																		]
+																	},
+																	{
+																		text:'Насосные станции',
+																		sub:[
+																			{text:'Канализационные насосные станции'},
+																			{text:'Станции пожаротушения'},
+																			{text:'Станции повышения давления'},
+																		]
+																	},
+																	{
+																		text:'Канализация для частного дома',
+																		sub:[
+																			{text:'Септики'},
+																			{text:'Станции биологической очистки'},
+																			{text:'Биофильтры'},
+																		]
+																	},
+																	{
+																		text:'Крупные хозбытовые очистные сооружения',
+																	},
+																	{
+																		text:'Очистные сооружения промышленных стоков',
+																	},
+																	{
+																		text:'Жироотделители',
+																	},
+																	{
+																		text:'Колодцы',
+																	},
+																	{
+																		text:'Водоподготовка',
+																	},
+																]
+															each cat in catalog
+																li.cat-menu__item
+																	a(href="#").cat-menu__link= cat.text
+
+																	if(cat.sub)
+																		ul.cat-menu__sub
+																			each sub in cat.sub
+																				li.cat-menu__sub-item(class=sub.status?'active':'')
+																					a(href="#").cat-menu__sub-link= sub.text

@@ -1,0 +1,94 @@
+.header-top{
+	padding: 20px 0;
+	border-bottom: 1px solid $color-light-grey;
+
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo-wrap{
+		display: flex;
+		align-items: center;
+		margin-right: 30px;
+	}
+
+	&__logo{
+		flex: 0 0 257px;
+		padding-right: 30px;
+		border-right: 1px solid $color-light-grey;
+	}
+
+	&__slogan{
+		max-width: 245px;
+		padding-left: 30px;
+		@include font(normal, normal, 1.6rem, 1.375, $color-text);
+	}
+
+	&__contact{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		text-align: right;
+	}
+
+	&__mail,
+	&__feadback{
+		@include font(normal, normal, 1.6rem, 1.375, $color-blue);
+
+		a{
+			color: $color-blue;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-blue-hover;}
+	}
+
+	&__mail{
+		padding-right: 14px;
+		margin-right: 10px;
+		position: relative;
+	}
+
+	&__mail::after{
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 15px;
+		background: $color-light-grey;
+		position: absolute;
+		@include top-center;
+		right: 0;
+	}
+}
+
+.header-phone{
+	width: 100%;
+	@include font(normal, normal, 1.8rem, 1.375, $color-text);
+	margin-bottom: 10px;
+
+	a{
+		color: $color-text;
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+		white-space: nowrap;
+	}
+
+	a:hover{color: $color-blue;}
+
+	&__icon{
+		display: inline-block;
+		vertical-align: middle;
+		flex: 0 0 18px;
+		margin-right: 10px;
+
+		.icon{
+			vertical-align: top;
+			fill: $color-blue;
+		}
+	}
+}
+
+.nav{border-bottom: 1px solid $color-light-grey;}
