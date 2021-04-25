@@ -1,0 +1,69 @@
+/*-------------- map -----------------*/
+.map{
+	margin-top: 70px;
+	position: relative;
+
+	&__frame{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		iframe{height: 100%;}
+	}
+}
+
+.map-info{
+	position: relative;
+
+	&__content{
+		min-height: 500px;
+		padding: 72px 60px;
+		background: #fff;
+	}
+
+	&__city{
+		@include font(normal, bold, 2.2rem, 1.35, $color-text);
+		margin-bottom: 7px;
+	}
+
+	&__address{
+		@include font(normal, normal, 1.6rem, 1.35, $color-grey);
+	}
+
+	.btn{margin-top: 50px;}
+}
+
+.map-contact{
+	&:not(:first-child){margin-top: 47px;}
+	&__item{display: flex;}
+	&__item:not(:last-child){margin-bottom: 20px;}
+
+	&__icon{
+		flex: 0 0 18px;
+		margin-right: 12px;
+
+		.icon{fill: $color-blue;}
+	}
+
+	&__text{
+		@include font(normal, normal, 1.8rem, 1.78, $color-text);
+	}
+
+	&__phone{
+		color: $color-text;
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__phone:hover{color: $color-blue;}
+
+	&__mail{
+		font-size: 1.6rem;
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__mail:hover{color: $color-blue-hover;}
+}

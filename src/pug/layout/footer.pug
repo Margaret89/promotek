@@ -1,4 +1,59 @@
 footer.footer
 	.container
 		.row
-			.col-12 footer
+			.col-3
+				.footer__copyright © "ПромоТек — Завод по производству ёмкостей из стеклопластика"
+
+			.col-3
+				ul.footer-menu
+					-
+						var list = [
+							{text:'О компании'},
+							{text:'Продукция', status:'true'},
+							{text:'Скидки'},
+							{text:'Отгрузки'},
+						]
+
+					each item in list
+						li.footer-menu__item(class=item.status?'active':'')
+							a(href="#").footer-menu__link= item.text
+
+			.col-3
+				ul.footer-menu
+					-
+						var list = [
+							{text:'Доставка'},
+							{text:'Новости'},
+							{text:'Вакансии'},
+							{text:'Контакты'},
+						]
+
+					each item in list
+						li.footer-menu__item(class=item.status?'active':'')
+							a(href="#").footer-menu__link= item.text
+
+
+			.col-3
+				.pay
+					.pay__label Способы оплаты:
+
+					.pay__list
+						.pay__item
+							img(src="assets/img/mastercard.png", alt="")
+
+						.pay__item
+							img(src="assets/img/visa.png", alt="")
+
+
+		.footer__bottom
+			.row
+				.col-9
+					.footer__polit
+						a(href="#") Политика конфиденциальности
+
+				.col-3
+					.develop
+						.develop__label Разработка сайтов
+						.develop__logo
+							img(src="assets/img/logo-strog.png", alt="")
+						.develop__text Strogov.ru

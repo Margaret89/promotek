@@ -22,13 +22,19 @@
 		justify-content: space-between;
 	}
 
-	&__item{position: relative;}
+	&__item{
+		width: 100%;
+		position: relative;
+	}
+
 	&__item_no-pos{position: static;}
 
 	&__link{
-		display: inline-block;
+		display: block;
 		vertical-align: top;
 		@include font(normal, normal, 1.8rem, 1.2, $color-blue);
+		white-space: nowrap;
+		text-align: center;
 		text-decoration: none;
 		padding: 19px 24px;
 		transition: all 0.2s ease 0s;
@@ -36,14 +42,14 @@
 
 	&__item.active &__link,
 	&__link:hover{
-		background: $color-blue;
+		background: $color-blue-hover;
 		color: #fff;
 	}
 
 	&__sub{
 		display: none;
 		min-width: 200px;
-		background: $color-blue;
+		background: $color-blue-hover;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -60,7 +66,7 @@
 
 	&__sub-link.active,
 	&__sub-link:hover{
-		background: $color-blue-hover;
+		background: #5f87d6;
 	}
 
 	&__item:hover .cat-menu-wrap,
@@ -72,7 +78,7 @@
 .cat-menu-wrap{
 	display: none;
 	padding: 32px 0;
-	background: $color-blue;
+	background: $color-blue-hover;
 	color: #fff;
 	width: 100%;
 	position: absolute;

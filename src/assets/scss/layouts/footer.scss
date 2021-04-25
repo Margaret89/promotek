@@ -1,0 +1,62 @@
+.footer{
+	padding: 52px 0;
+
+	&__copyright{
+		@include font(normal, normal, 1.6rem, 1.625, $color-grey);
+	}
+
+	&__bottom{margin-top: 62px;}
+
+	&__polit{
+		font-size: 1.6rem;
+		margin-right: 30px;
+
+		a{
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-blue-hover;}
+	}
+}
+
+.pay{
+	&__label{
+		@include font(normal, normal, 1.6rem, 1.625, $color-grey);
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -3px;
+		margin-right: -3px;
+	}
+
+	&__item{
+		border-radius: 5px;
+		border: 1px solid $color-light-grey;
+		padding: 6px 12px;
+		margin: 3px;
+	}
+}
+
+.develop{
+	display: inline-flex;
+	align-items: center;
+	white-space: nowrap;
+
+	&__label{
+		@include font(normal, normal, 1.6rem, 1.2, $color-grey);
+	}
+
+	&__logo{
+		flex: 0 0 12px;
+		margin: 0 2px 0 8px;
+	}
+
+	&__text{
+		@include font(normal, bold, 1.6rem, 1.2, $color-blue);
+	}
+}

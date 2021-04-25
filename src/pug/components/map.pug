@@ -1,0 +1,25 @@
+.map.last-elem
+	.map__frame
+		iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A90caf9218a7372836401173e0dadb6789075da5308d170396155b53ef655f885&source=constructor' width='100%' height='500' frameborder='0')
+
+	.map-info
+		.container
+			.row
+				.col-5
+					.map-info__content
+						.map-info__city Санкт-Петербург
+						.map-info__address пр. 9-го Января, д.3, корп. 1, офис 301
+
+						.map-contact
+							.map-contact__item
+								.map-contact__icon
+									+svg('ic-call','ic-call', '18', '18')
+
+								.map-contact__text
+									a(href="tel:+78123090040").map-contact__phone +7 (812) 309-00-40
+									br
+									a(href="tel:+74997034003").map-contact__phone +7 (499) 703-40-03
+									br
+									a(href="mailto:info@promo-tek.ru").map-contact__mail info@promo-tek.ru
+
+						a.btn(href='#') Обратный звонок
