@@ -1,0 +1,218 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+
+block content
+	section.top-block
+		.container
+			.row.top-block__content
+				.col-6
+					.top-block__info
+						.top-block__title <span class="top-block__title-accent">Комплексные поставки промышленного</span> и строительного оборудования
+					
+						a.btn(href='#')
+							span.btn__text Перейти в каталог
+							span.btn__arr
+								+svg('ic-arrow-right','ic-arrow-right', '8', '12')
+
+				.col-6
+					.top-block__img
+						img(src="assets/img/top-block.png", alt="")
+
+	section.cat-sect-wrap
+		.container
+			.row
+				.col-12
+					.cat-sect
+						-
+							var list=[
+								{
+									text:'Емкости',
+									img:'cat-sect1.png',
+									grid:'first',
+									sect:[
+										{text:'Накопительные'},
+										{text:'Пожарные'},
+										{text:'Топливные'},
+										{text:'Химстойкие'},
+										{text:'Для питьевой воды'},
+									],
+								},
+								{
+									text:'Ливневые очистные сооружения',
+									img:'cat-sect2.png',
+									grid:'second',
+									sect:[
+										{text:'Комплексные системы очистки'},
+										{text:'Пескоотделители'},
+										{text:'Маслобензоотделители'},
+										{text:'Сорбционные блоки'},
+										{text:'Блоки УФО'},
+									],
+								},
+								{
+									text:'Насосные станции',
+									img:'cat-sect3.png',
+									grid:'three',
+									sect:[
+										{text:'Канализационные насосные станции'},
+										{text:'Станции пожаротушения'},
+										{text:'Станции повышения давления'},
+									],
+								},
+								{
+									text:'Канализация для частного дома',
+									img:'cat-sect4.png',
+									grid:'four',
+									sect:[
+										{text:'Септики'},
+										{text:'Станции биологической очистки'},
+										{text:'Биофильтры'},
+									],
+								},
+								{
+									text:'Крупные хозбытовые очистные сооружения',
+									img:'cat-sect5.png',
+									grid:'five',
+								},
+								{
+									text:'Очистные сооружения промышленных стоков',
+									img:'cat-sect6.png',
+									grid:'six',
+								},
+								{
+									text:'Жироотделители',
+									img:'cat-sect7.png',
+									grid:'seven',
+								},
+								{
+									text:'Колодцы',
+									img:'cat-sect8.png',
+									grid:'eight',
+								},
+								{
+									text:'Водоподготовка',
+									img:'cat-sect9.png',
+									grid:'nine',
+								},
+								
+							]
+
+						each item in list
+							.cat-sect__item
+								.cat-sect__content
+									.cat-sect__title
+										a(href="#")= item.text
+
+									if(item.sect)
+										ul.cat-sect__sub
+											each sect in item.sect
+												li.cat-sect__sub-item
+													a(href="#").cat-sect__sub-link= sect.text
+
+
+								.cat-sect__img
+									img(src="assets/img/"+item.img, alt="")
+
+	section.news-list.bg-grey
+		.container
+			.row
+				.col-10.offset-1
+					.h2 <b>Новости</b> компании
+			
+			.row
+				-
+					var list=[
+						{img:'news1.jpg', title:'ЛОС для ООО "Компания "Тензор"', date:'29 января 2020'},
+						{img:'news2.jpg', title:'КНС для Камчатки', date:'13 сентября 2020'},
+						{img:'news3.jpg', title:'Комплексная система очистки дождевых стоков', date:'5 мая 2020'},
+					]
+
+				each item in list
+					.col-4
+						.news-item
+							a(href="#").news-item__img-wrap
+								span.news-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+							.news-item__content
+								.news-item__title
+									a(href="#")= item.title
+									
+								.news-item__date=item.date
+
+			.row
+				.col-10.offset-1
+					.news-list__more
+						a.btn(href='#')
+							span.btn__text Еще новости
+							span.btn__arr
+								+svg('ic-arrow-right','ic-arrow-right', '8', '12')
+
+	section.gal-slider-wrap
+		.container
+			.row
+				.col-10.offset-1
+					.h2 <b>Производство</b> в фотографиях
+			
+			.row
+				.col-12
+					.gal-slider.js-gal-slider
+						-
+							var list=[
+								{img:'gal-slider1.jpg'},
+								{img:'gal-slider2.jpg'},
+								{img:'gal-slider3.jpg'},
+								{img:'gal-slider4.jpg'},
+								{img:'gal-slider5.jpg'},
+							]
+
+						each item in list
+							.gal-slider__item
+								a(href="assets/img/"+item.img data-fancybox='gal-slider')
+									img(src="assets/img/"+item.img, alt="")
+
+	section.about.bg-grey
+		.container
+			.row
+				.col-7.offset-1
+					.about__content
+						.h2 <b>О</b> компании
+
+						p Основным направлением деятельности компании  «ПромоТек» является оптово-розничная поставка промышленного оборудования и материалов ведущих российских и мировых производителей. В основу  работы компании положен принцип комплексного оказания услуг, включая подбор и поставку, сервисное обслуживание и консультации по различным аспектам использования оборудования.
+						p Сочетание широкого ассортимента оборудования и материалов, огромных складских запасов и индивидуального подхода к работе с каждым клиентом позволяют полностью закрыть все потребности Вашей организации.
+						p Благодаря тесному, многолетнему сотрудничеству с крупнейшими отечественными и  импортными производителями продукции, мы можем себе позволить предлагать лучшие цены на рынке, что дает Вам возможность снизить финансовые затраты на закупку оборудования. Также наш отдел логистики поможет Вам оптимизировать транспортные расходы и сократить время доставки товара.
+
+				.col-4
+					.about__img
+						img(src="assets/img/man.png", alt="")
+
+	section.partners
+		.container
+			.partners__top
+				.row
+					.col-5.offset-1
+						.h2 <b>Нас</b> выбирают:
+
+					.col-5
+						.partners__text Многие крупные строительные объекты РФ оснащены нашим оборудованием
+
+
+			.row
+				.col-10.offset-1
+					.partners-list.js-partners-list
+						-
+							var list=[
+								{img:'partner1.png'},
+								{img:'partner2.png'},
+								{img:'partner3.png'},
+								{img:'partner4.png'},
+								{img:'partner2.png'},
+								{img:'partner4.png'},
+								{img:'partner3.png'},
+								{img:'partner1.png'},
+							]
+
+						each item in list
+							a(href="#").partners-list__item
+								img(src="assets/img/"+item.img, alt="")

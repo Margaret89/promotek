@@ -1,6 +1,6 @@
 /*-------------- map -----------------*/
 .map{
-	margin-top: 70px;
+	margin-top: 140px;
 	position: relative;
 
 	&__frame{
@@ -65,5 +65,5 @@
 		transition: color 0.2s ease 0s;
 	}
 
-	&__mail:hover{color: $color-blue-hover;}
+	&__mail:hover{color: $color-blue-hover-light;}
 }

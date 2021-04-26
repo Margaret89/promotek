@@ -1,0 +1,21 @@
+/*-------------- about -----------------*/
+.about{
+	background-image: url(../img/bg-lines-left.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 80px 0 65px;
+
+	&__content{
+		font-size: 2rem;
+		line-height: 1.6;
+		padding: 65px 0 60px;
+	}
+
+	&__img{
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		margin-right: -160px;
+		padding-top: 65px;
+	}
+}
