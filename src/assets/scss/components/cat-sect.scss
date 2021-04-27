@@ -25,14 +25,24 @@
 		padding: 20px;
 		outline: 1px solid $color-light-grey;
 		outline-offset: -1px;
-		border: 6px solid transparent;
-		transition: border 0.2s ease 0s;
+		position: relative;
 	}
 
-	&__item:hover{
-		border-color: $color-blue;
-		outline: none;
+	&__item::after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 6px solid $color-blue;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: opacity 0.2s ease 0s;
 	}
+
+	&__item:hover{outline: none;}
+	&__item:hover::after{opacity: 1;}
 
 	&__item:nth-child(6n + 5),
 	&__item:nth-child(6n + 6),
@@ -43,8 +53,8 @@
 	&__item:nth-child(6n + 5) &__img,
 	&__item:nth-child(6n + 6) &__img,
 	&__item:nth-child(6n + 8) &__img{
-		margin-right: -26px;
-		margin-top: -26px;
+		margin-right: -20px;
+		margin-top: -20px;
 	}
 
 	&__item:nth-child(6n + 5) &__content,
@@ -65,7 +75,11 @@
 
 	&__item:nth-child(6n + 8) &__img{justify-content: center;}
 
-	&__content{padding: 17px 24px;}
+	&__content{
+		padding: 22px 30px;
+		position: relative;
+		z-index: 2;
+	}
 
 	&__title{
 		@include font(normal, normal, 1.8rem, 1.67, $color-text);
@@ -117,9 +131,16 @@
 	&__img{
 		display: flex;
 		align-items: flex-end;
-		margin-top: -16px;
-		margin-bottom: -26px;
+		margin-top: -27px;
+		margin-bottom: -20px;
 
 		img{max-height: 100%;}
+	}
+}
+
+@media (max-width: 991px) {
+	.cat-sect{
+		grid-template-columns: repeat(2, 1fr);
+		&__item:nth-child(6n + 4) {grid-row: auto;}
 	}
 }

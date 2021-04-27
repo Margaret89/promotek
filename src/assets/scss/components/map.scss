@@ -67,3 +67,12 @@
 
 	&__mail:hover{color: $color-blue-hover-light;}
 }
+
+@media (max-width: 991px) {
+	.map-info{
+		&__content{
+			min-height: 400px;
+			padding: 50px 30px;
+		}
+	}
+}

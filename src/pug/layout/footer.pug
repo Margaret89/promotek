@@ -47,13 +47,33 @@ footer.footer
 
 		.footer__bottom
 			.row
-				.col-9
+				.col-md-6.col-xl-9
 					.footer__polit
 						a(href="#") Политика конфиденциальности
 
-				.col-3
+				.col-md-6.col-xl-3.d-md-flex.justify-content-md-end.justify-content-xl-start
 					.develop
 						.develop__label Разработка сайтов
 						.develop__logo
 							img(src="assets/img/logo-strog.png", alt="")
 						.develop__text Strogov.ru
+
+.move-up.js-move-up
+	+svg('ic-arrow-up','ic-arrow-up', '18', '12')
+
+#feadback-form(style='display: none;')
+	.popup-form
+		.popup-form__title <b>Обратный</b> звонок
+
+		form.form-site
+			.form-site__item
+				input(type="text", placeholder="Ваше имя")
+
+			.form-site__item
+				input.js-phone(type="text", placeholder="Телефон")
+
+			.form-site__btn
+				button.btn
+					span.btn__text Отправить
+					span.btn__arr
+						+svg('ic-arrow-right','ic-arrow-right', '8', '12')

@@ -1,0 +1,66 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	&__item{margin-bottom: 20px;}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	textarea{
+		display: inline-block;
+		height: 6rem;
+		width: 100%;
+		font-family: $font-site;
+		@include font(normal, 500, 1.6rem, 5.8rem, $color-text);
+		padding: 0 30px;
+		border-radius: 5px;
+		border: 1px solid #ebebeb;
+		outline: 0;
+		margin: 0;
+		background: #ebebeb;
+		box-shadow: none;
+		transition: border 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 14.5rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	textarea:focus{
+		border-color: $color-blue;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="number"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder,
+	textarea::placeholder{
+		color: #858585;
+	}
+
+	// select{width: 1px!important;}
+	// .select2{width: 100%!important;}
+
+	// .select2-container .select2-selection--single,
+	// .select2-container--default .select2-selection--single .select2-selection__rendered{
+	// 	height: 4rem;
+	// 	width: 100%;
+	// 	font-size: 1.6rem;
+	// 	line-height: 3.8rem;
+	// 	color: $color-text;
+	// }
+
+	// .select2-container--default .select2-selection--single .select2-selection__rendered{padding-left: 23px;}
+
+	
+	&__btn{
+		text-align: center;
+		margin-top: 10px;
+	}
+}

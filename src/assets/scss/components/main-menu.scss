@@ -145,3 +145,22 @@
 		color: $color-yellow;
 	}
 }
+
+@media (max-width: 1239px) {
+	.main-menu{
+		&__link{font-size: 1.6rem;}
+	}
+}
+
+@media (max-width: 991px) {
+	.main-menu{
+		&__link{
+			font-size: 1.5rem;
+			padding: 15px 10px;
+		}
+	}
+
+	.cat-menu{
+		&__item{width: calc(33.33% - 30px);}
+	}
+}

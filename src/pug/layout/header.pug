@@ -1,5 +1,5 @@
 header.header
-	.header-top
+	.header-top.d-none.d-md-block
 		.container
 			.row
 				.col-12
@@ -20,12 +20,30 @@ header.header
 								| 
 								a(href="tel:+74997034003") +7 (499) 703-40-03
 
-							.header-top__mail
-								a(href="mailto:info@promo-tek.ru") info@promo-tek.ru
+							.header-top__feadback-wrap
+								.header-top__mail
+									a(href="mailto:info@promo-tek.ru") info@promo-tek.ru
 
-							.header-top__feadback
-								a(href="#") Обратный звонок
+								.header-top__feadback
+									a(data-fancybox='' data-src='#feadback-form' href='javascript:;') Обратный звонок
 
+	.header-mobile.d-md-none
+		.container
+			.row
+				.col-12
+					.header-mobile__content
+						.header-mobile__main
+							span.ic-hamburger.js-btn-menu
+								span
+
+							.header-mobile__logo
+								a(href="#")
+									img(src="assets/img/logo.png", alt="")
+
+						.header-mobile__call
+							+svg('ic-call','ic-call', '18', '18')
+							span.ic-hamburger.js-close-call
+								span
 	.nav
 		.container
 			.row

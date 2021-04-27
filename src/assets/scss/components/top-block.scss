@@ -37,3 +37,10 @@
 		img{max-height: 100%;}
 	}
 }
+
+@media (max-width: 991px) {
+	.top-block{
+		&__info{padding: 40px 0;}
+		&__title{font-size: 4rem;}
+	}
+}

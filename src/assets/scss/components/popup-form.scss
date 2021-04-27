@@ -1,0 +1,10 @@
+/*-------------- popup-form -----------------*/
+.popup-form{
+	&__title{
+		@include font(normal, 300, 3rem, 1.2, $color-text);
+		text-align: center;
+		margin-bottom: 2rem;
+
+		b{font-weight: 500;}
+	}
+}
