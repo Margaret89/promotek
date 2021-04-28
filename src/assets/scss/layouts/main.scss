@@ -225,4 +225,6 @@ button.btn:hover{
 
 @media (max-width: 767px) {
 	main{padding-top: 60px;}
+	.wrapper{overflow: hidden;}
+	.container{max-width: 100%!important;}
 }

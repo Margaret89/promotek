@@ -98,8 +98,6 @@
 	}
 }
 
-.nav{border-bottom: 1px solid $color-light-grey;}
-
 @media (max-width: 1239px) {
 	.header-top{
 		&__contact{max-width: 40%;}
@@ -162,20 +160,24 @@
 }
 
 @media (max-width: 767px) {
-	.header-mobile{
+	.header{
 		width: 100%;
-		background: #fff;
-		border-bottom: 1px solid $color-light-grey;
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 1000;
+	}
 
+	.header-mobile{
+		width: 100%;
+		background: #fff;
+		border-bottom: 1px solid $color-light-grey;
+	
 		&__content{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			height: 59px;
+			height: 60px;
 		}
 
 		&__main{
@@ -194,6 +196,4 @@
 			.ic-hamburger{display: none;}
 		}
 	}
-
-	.nav{display: none;}
 }
