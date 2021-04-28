@@ -144,3 +144,17 @@
 		&__item:nth-child(6n + 4) {grid-row: auto;}
 	}
 }
+
+@media (max-width: 767px) {
+	.cat-sect-wrap{margin: 40px 0 30px;}
+
+	.cat-sect{
+		grid-gap: 10px;
+		grid-template-columns: repeat(1, 1fr);
+
+		&__item:nth-child(6n + 5),
+		&__item:nth-child(6n + 6){
+			grid-column: auto;
+		}
+	}
+}

@@ -91,3 +91,39 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.news-list{
+		margin: 40px 0;
+		padding: 30px 0;
+
+		&__more{
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.news-item{
+		height: auto;
+		margin-bottom: 10px;
+
+		&__img-wrap{height: 240px;}
+
+		&__content{
+			height: auto;
+			padding: 23px 20px;
+		}
+
+		&__title{
+			font-size: 1.8rem;
+			line-height: 1.44;
+		}
+
+		&__date{
+			font-size: 1.4rem;
+			margin-top: 20px;
+		}
+	}
+}

@@ -2,6 +2,7 @@
 .top-block{
 	background-color: #f5f5f5;
 	background-image: url(../img/waves.png);
+	// background-repeat: repeat;
 	background-position: 0 0;
 	margin-bottom: 60px;
 
@@ -42,5 +43,21 @@
 	.top-block{
 		&__info{padding: 40px 0;}
 		&__title{font-size: 4rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.top-block{
+		margin-bottom: 40px;
+		
+		&__info{
+			text-align: center;
+			padding: 23px 0;
+
+			.btn{margin: 23px auto 0;}
+		}
+
+		&__title{font-size: 3rem;}
+		&__img{max-height: 302px;}
 	}
 }

@@ -58,3 +58,26 @@
 		&:hover .icon{fill: $color-blue-hover-light;}
 	}
 }
+
+@media (max-width: 767px) {
+	.partners{
+		margin: 32px 0;
+
+		&__text{
+			font-size: 1.6rem;
+			line-height: 1.625;
+			text-align: center;
+			padding-top: 0;
+			margin-top: -4px;
+		}
+
+		&__top{margin-bottom: 40px;}
+	}
+
+	.partners-list{
+		.btn-arr{
+			&_left{left: 0;}
+			&_right{right: 0;}
+		}
+	}
+}

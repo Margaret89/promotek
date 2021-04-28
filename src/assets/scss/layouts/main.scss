@@ -9,6 +9,12 @@ body{
 
 body{font-size: 1.8rem;}
 
+body.no-scroll{
+	height: 100vw;
+	width: 100vh;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -28,7 +34,7 @@ a:hover{text-decoration: none;}
 
 p{
 	padding: 0;
-	margin-bottom: 32px;
+	margin-bottom: 3.2rem;
 }
 
 ul, ol{list-style-position: inside;}
@@ -224,7 +230,47 @@ button.btn:hover{
 }
 
 @media (max-width: 767px) {
-	main{padding-top: 60px;}
+	main{
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+
+	.last-elem{margin-bottom: -40px;}
+
 	.wrapper{overflow: hidden;}
 	.container{max-width: 100%!important;}
+	body{font-size: 1.6rem;}
+
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		height: 6rem;
+		line-height: 5.8rem;
+		font-size: 1.4rem;
+		padding: 0 30px;
+	}
+
+	.fancybox-content{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	h1, .h1{
+		font-size: 3.6rem;
+		margin-bottom: 3rem;
+	}
+
+	h2, .h2{
+		font-size: 3rem;
+		line-height: 1.2;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	h3,.h3{font-size: 2.4rem;}
+	h4,.h4{font-size: 2.1rem;}
+	h5,.h5{font-size: 1.8rem;}
+
+	p{margin-bottom: 2.6rem;}
+	.h2 + p, h2 + p{margin-top: -0.4rem;}
 }

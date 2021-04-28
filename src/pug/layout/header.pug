@@ -41,11 +41,30 @@ header.header
 									img(src="assets/img/logo.png", alt="")
 
 						.header-mobile__call
-							+svg('ic-call','ic-call', '18', '18')
-							span.ic-hamburger.js-close-call
-								span
+							span.header-mobile__call-open.js-open-call
+								+svg('ic-call','ic-call', '18', '18')
+							
+							span.header-mobile__call-close.js-close-call
+								span.ic-hamburger
+									span
+
 	
-	.nav
+	.header-mob-contact.d-md-none.js-header-mob-contact
+		.header-mob-contact__city Санкт-Петербург
+		.header-mob-contact__address пр. 9-го Января, д.3, корп. 1, офис 301
+
+		.header-mob-contact__phone
+			a(href="tel:+78123090040") +7 (812) 309-00-40
+			br
+			a(href="tel:+74997034003") +7 (499) 703-40-03
+
+		.header-mob-contact__mail
+			a(href="mailto:info@promo-tek.ru") info@promo-tek.ru
+
+		.header-mob-contact__btn
+			a.btn(data-fancybox='' data-src='#feadback-form' href='javascript:;') Обратный звонок
+	
+	.nav.js-nav
 		.container
 			.row
 				.col-12
@@ -72,16 +91,19 @@ header.header
 
 							each item in list
 								li.main-menu__item(class=item.status?'active':item.catalog?'main-menu__item_no-pos':'')
-									a(href="#").main-menu__link= item.text
+									a(href="#").main-menu__link.js-mob-link= item.text
+										if(item.submenu || item.catalog)
+											.main-menu__arr.js-mob-arr
+												+svg('ic-arrow-down','ic-arrow-down', '12', '8')
 
 									if(item.submenu)
-										ul.main-menu__sub
+										ul.main-menu__sub.js-mob-sub
 											each submenu in item.submenu
 												li.main-menu__sub-item
 													a(href="#").main-menu__sub-link= submenu.text
 
 									if(item.catalog)
-										.cat-menu-wrap
+										.cat-menu-wrap.js-mob-sub
 											.container
 												.row
 													.col-12
@@ -142,10 +164,13 @@ header.header
 																]
 															each cat in catalog
 																li.cat-menu__item
-																	a(href="#").cat-menu__link= cat.text
+																	a(href="#").cat-menu__link.js-mob-link= cat.text
+																		if(cat.sub)
+																			.cat-menu__arr.js-mob-arr
+																				+svg('ic-arrow-down','ic-arrow-down', '12', '8')
 
 																	if(cat.sub)
-																		ul.cat-menu__sub
+																		ul.cat-menu__sub.js-mob-sub
 																			each sub in cat.sub
 																				li.cat-menu__sub-item(class=sub.status?'active':'')
 																					a(href="#").cat-menu__sub-link= sub.text

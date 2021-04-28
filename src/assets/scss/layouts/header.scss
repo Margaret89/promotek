@@ -172,6 +172,8 @@
 		width: 100%;
 		background: #fff;
 		border-bottom: 1px solid $color-light-grey;
+		position: relative;
+		z-index: 2;
 	
 		&__content{
 			display: flex;
@@ -194,6 +196,50 @@
 		&__call{
 			.icon{fill: $color-blue;}
 			.ic-hamburger{display: none;}
+			.ic-hamburger.active{display: inline-block;}
 		}
+
+		&__call-open.hide,
+		&__call-open.hide{
+			display: none;
+		}
+	}
+
+	.header-mob-contact{
+		display: none;
+		width: 100%;
+		background: #fff;
+		padding: 30px 15px;
+		text-align: center;
+		position: absolute;
+		top: 100%;
+		
+		&__city{
+			@include font(normal, bold, 2rem, 1.5, $color-text);
+		}
+
+		&__address{
+			@include font(normal, normal, 1.6rem, 1.5, $color-grey);
+			margin-top: 5px;
+		}
+
+		&__phone{
+			@include font(normal, normal, 1.8rem, 1.67, $color-text);
+			margin-top: 15px;
+
+			a{
+				color: $color-text;
+				text-decoration: none;
+			}
+		}
+
+		&__mail{
+			@include font(normal, normal, 1.6rem, 1.5, $color-text);
+			margin-top: 5px;
+
+			a{text-decoration: none;}
+		}
+
+		&__btn{margin-top: 23px;}
 	}
 }

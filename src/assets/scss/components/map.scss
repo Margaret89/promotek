@@ -76,3 +76,36 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.map{
+		margin-top: 70px;
+
+		&__frame{
+			height: 420px;
+			position: static;
+		}
+	}
+
+	.map-info{
+		&__content{
+			min-height: 0;
+			padding: 35px 0 10px;
+			text-align: center;
+		}
+
+		&__city{font-size: 2rem;}
+		&__address{font-size: 1.6rem;}
+		.btn{margin-top: 20px;}
+	}
+
+	.map-contact{
+		&__icon{display: none;}
+		&:not(:first-child){margin-top: 15px;}
+
+		&__text{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
