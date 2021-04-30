@@ -1,11 +1,15 @@
 /*-------------- catalog -----------------*/
-.catalog-top{margin-bottom: 14px;}
+.catalog-top{
+	margin-bottom: 40px;
+	p:last-child{margin-bottom: 0;}
+}
+
 .catalog-sect{margin-bottom: 75px;}
 
 .cat-sect-list{
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 -5px 0;
+	margin: 0 -5px;
 
 	&__item{
 		display: inline-block;
@@ -25,3 +29,16 @@
 }
 
 .catalog-bottom{padding: 68px 0 60px;}
+
+@media (max-width: 767px) {
+	.catalog-top{margin-bottom: 28px;}
+	.catalog-sect{margin-bottom: 36px;}
+
+	.cat-sect-list{
+		margin: 0 -4px;
+
+		&__item{margin: 4px;}
+	}
+
+	.catalog-bottom{padding: 33px 0 35px;}
+}

@@ -1,8 +1,15 @@
 /*-------------- project-list -----------------*/
 .project-slider{
+	display: none;
 	margin: 40px -15px 50px;
 
-	.slick-slide{margin: 0 15px;}
+	&.slick-initialized{display: block;}
+	.slick-track{display: flex;}
+
+	.slick-slide{
+		margin: 0 15px;
+		height: auto;
+	}
 
 	.btn-arr{
 		display: inline-flex;
@@ -78,5 +85,52 @@
 		}
 
 		a:hover{color: $color-blue;}
+	}
+}
+
+@media (max-width: 1350px) {
+	.project-slider{
+		.btn-arr{
+			&_left{left: -15px;}
+			&_right{right: -15px;}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.project-slider{
+		margin-top: 23px;
+		margin-bottom: 18px;
+
+		.btn-arr{
+			background: #fff;
+			top: calc(100vw / 3.2);
+
+			&_left{left: 0;}
+			&_right{right: 0;}
+
+			.icon{
+				width: 9px;
+				fill: $color-blue;
+			}
+		}
+	}
+
+	.project-item{
+		&__img-wrap{padding-top: 70%;}
+
+		&__content{
+			text-align: center;
+			padding: 14px 15px;
+		}
+
+		&__address{font-size: 1.4rem;}
+		&__title{font-size: 1.8rem;}
+	}
+}
+
+@media (max-width: 479px) {
+	.project-slider{
+		.slick-slide{margin: 0;}
 	}
 }

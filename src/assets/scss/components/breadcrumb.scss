@@ -28,3 +28,13 @@
 		color: #757575;;
 	}
 }
+
+@media (max-width: 767px) {
+	.breadcrumb{
+		padding: 12px 0 4px;
+
+		&__item{font-size: 1.4rem;}
+		&__link{color: $color-blue;}
+		&__item:not(:last-child)::after{margin: 0 5px 0 8px;}
+	}
+}
