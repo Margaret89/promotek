@@ -1,0 +1,115 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Продукция'},
+			{href:'#',name:'Емкостное оборудование'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.page-title
+		.container
+			.row
+				.col-lg-8
+					h1 <b>Емкостное</b> оборудование
+				
+	.catalog
+		section.catalog-top
+			.container
+				.row
+					.col-lg-8
+						p Поставляем изделия в полной готовности к установке на объекте. Это упрощает монтажные и пуско-наладочные работы и экономит средства заказчика
+
+		section.catalog-sect
+			.container
+				.row
+					.col-12
+						.cat-sect-list
+							-
+								var list=[
+									{text:'Накопительные', status:'active'},
+									{text:'Пожарные'},
+									{text:'Топливные'},
+									{text:'Химстойкие'},
+									{text:'Для питьевой воды'},
+								]
+
+							each item in list
+								.cat-sect-list__item(class=item.status?'active':'')= item.text
+
+		section.form-hor-wrap.bg-blue-patern
+			.container
+				.row
+					.col-10
+						.form-hor.form-hor_white
+							.form-hor__top
+								.form-hor__title <b>Заполните форму</b> обратной связи
+								.form-hor__text Наш консультант свяжется с вами в течении <b>5 минут</b>
+
+							.form-hor__content
+								.form-hor__item
+									.form-hor__label Ваше имя
+									.form-hor__field
+										input(type="text")
+
+								.form-hor__item
+									.form-hor__label Телефон
+									.form-hor__field
+										input.js-phone(type="text")
+
+								.form-hor__btn
+									button.btn.btn_border.btn_white(type="submit")
+										span.btn__text Отправить
+										span.btn__arr
+											+svg('ic-arrow-right','ic-arrow-right', '8', '12')
+
+
+		section.project-slider-wrap
+			.container
+				.row
+					.col-12
+						.h2 <b>Выполненные</b> проекты
+
+						.project-slider.js-project-slider
+							-
+								var list=[
+									{img:'project1.jpg', address:'Угольная Гавань, Санкт-Петербург', title:'Строительство складского комплекса'},
+									{img:'project2.jpg', address:'Выборгское ш.', title:'Автосалон Audi'},
+									{img:'project3.jpg', address:'Мурино, Лен. область', title:'Строительство бетонного завода'},
+									{img:'project2.jpg', address:'Выборгское ш.', title:'Автосалон Audi'},
+									{img:'project3.jpg', address:'Мурино, Лен. область', title:'Строительство бетонного завода'},
+									{img:'project1.jpg', address:'Угольная Гавань, Санкт-Петербург', title:'Строительство складского комплекса'},
+								]
+							
+							each item in list
+								.project-item
+									a(href="#").project-item__img-wrap
+										span.project-item__img(style="background-image: url(assets/img/"+item.img+")")
+									
+									.project-item__content
+										.project-item__address= item.address
+										.project-item__title
+											a(href="#")= item.title
+
+		section.catalog-bottom.bg-grey
+			.container
+				.row
+					.col-12
+						.h3 <b>Емкостное</b> оборудование
+
+						p Мы предлагаем широкую линейку размеров емкостного оборудования. Производственные мощности позволяют выпускать емкости на диаметре до 4000 мм различной длины. По техническому Заданию Заказчика возможно изготовление емкости нестандартных размеров, а также емкостей с дополнительным оборудованием. При необходимости размещения на объекте емкостей большого объема возможно применение сборных резервуаров. Данные емкости изготавливаются из стеклопластиковых панелей и собираются непосредственно на объекте Заказчика. Как правило, такие емкости применяются в наземном исполнении.
+
+						.h4 Варианты исполненя:
+
+						ul
+							li горизонтальные и вертикальные;
+							li наземного и подземного исполнения;
+							li на ложементах, на ножках или с плоским дном;
+							li сборные резервуары

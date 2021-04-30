@@ -1,0 +1,27 @@
+/*-------------- catalog -----------------*/
+.catalog-top{margin-bottom: 14px;}
+.catalog-sect{margin-bottom: 75px;}
+
+.cat-sect-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -5px 0;
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid $color-light-grey;
+		padding: 15px 19px;
+		@include font(normal, bold, 1.8rem, 1.2, $color-blue);
+		white-space: nowrap;
+		margin: 5px;
+		transition: border 0.2s ease 0s;
+	}
+
+	&__item:hover,
+	&__item.active{
+		border-color: $color-blue;
+	}
+}
+
+.catalog-bottom{padding: 68px 0 60px;}

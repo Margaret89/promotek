@@ -114,3 +114,37 @@ $(document).on('click', function(event) {
 		event.stopPropagation();
 	}
 });
+
+// project slider
+if($('.js-project-slider').length){
+	$('.js-project-slider').slick({
+		infinite: true,
+		slidesToShow: 3,
+  		slidesToScroll: 2,
+		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="16" height="24"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
+		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="16" height="24"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		// responsive: [
+		// 	{
+		// 		breakpoint: 992,
+		// 		settings: {
+		// 			slidesToShow: 3,
+		// 			slidesToScroll: 3,
+		// 		}
+		// 	},
+		// 	{
+		// 		breakpoint: 768,
+		// 		settings: {
+		// 			slidesToShow: 2,
+		// 			slidesToScroll: 2,
+		// 		}
+		// 	},
+		// 	{
+		// 		breakpoint: 480,
+		// 		settings: {
+		// 			slidesToShow: 1,
+		// 			slidesToScroll: 1,
+		// 		}
+		// 	},
+		// ]
+	});
+}
