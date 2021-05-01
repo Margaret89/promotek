@@ -225,11 +225,15 @@ button.btn_border.btn_white:hover{
 }
 
 .fancybox-content{
-	padding: 55px 40px 30px;
+	padding: 50px 40px 30px;
 	border: 2px solid $color-blue-hover;
 }
 
-.fancybox-slide--html .fancybox-close-small{padding: 4px;}
+.fancybox-slide--html .fancybox-close-small{
+	padding: 4px;
+	top: 14px;
+	right: 14px;
+}
 
 .fancybox-button svg path{
 	fill: #adadad;
@@ -346,7 +350,7 @@ button.btn_border.btn_white:hover{
 	h5,.h5{font-size: 1.8rem;}
 
 	p{margin-bottom: 2.6rem;}
-	.h2 + p, h2 + p{margin-top: -0.4rem;}
+	.h2 + p, h2 + p{margin-top: -1.2rem;}
 	p + .h4, p + h4{margin-top: 2.5rem;}
 
 	ul li{margin-bottom: 0;}
@@ -359,4 +363,10 @@ button.btn_border.btn_white:hover{
 			line-height: 1.2;
 		}
 	}
+
+	.fancybox-slide--html .fancybox-close-small{
+		top: 0;
+		right: 0;
+	}
+	
 }

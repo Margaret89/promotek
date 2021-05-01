@@ -30,6 +30,45 @@
 		flex: 0 0 42.5%;
 		margin-left: 30px;
 	}
+
+	&__text{
+		p:last-child{margin-bottom: 0;}
+	}
 }
 
 .cat-detail-sect:not(:last-child){margin-bottom: 63px;}
+
+@media (max-width: 767px) {
+	.cat-detail{
+		margin-top: 12px;
+	
+		&__title{
+			h1, .h1{
+				font-size: 3rem;
+				line-height: 1.2;
+				margin-bottom: 2.3rem;
+			}
+		}
+
+		.breadcrumb{
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+	}
+
+	.cat-detail-top{
+		flex-direction: column;
+		margin-bottom: 2.5rem;
+
+		&__img{
+			order: -1;
+			margin-left: 0;
+			margin-bottom: 21px;
+		}
+	}
+
+	.cat-detail-sect{
+		h2, .h2{text-align: left;}
+		&:not(:last-child){margin-bottom: 32px;}
+	}
+}

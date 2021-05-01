@@ -1,12 +1,13 @@
 /*-------------- design-table -----------------*/
+.design-table-wrap{margin-bottom: 40px;}
+
 .design-table{
 	width: 100%;
 	font-size: 1.6rem;
-	margin-bottom: 40px;
 
 	th,
 	td{
-		padding: 9px 15px;
+		padding: 9px 15px 10px;
 	}
 
 	th{
@@ -32,4 +33,29 @@
 	tr{border-bottom: 1px solid $color-light-grey;}
 }
 
-h2 + .design-table, .h2 + .design-table{margin-top: -12px;}
+h2 + .design-table-wrap, .h2 + .design-table-wrap{margin-top: -12px;}
+
+@media (max-width: 767px) {
+	.design-table-wrap{
+		margin: 0 -15px 30px;
+		overflow-y: auto;
+	}
+
+	.design-table{
+		min-width: 500px;
+
+		th{white-space: nowrap;}
+
+		th:first-child,
+		td:first-child{
+			padding-left: 15px;
+		}
+
+		th:last-child,
+		td:last-child{
+			padding-right: 15px;
+		}
+	}
+
+	h2 + .design-table-wrap, .h2 + .design-table-wrap{margin-top: -17px;}
+}

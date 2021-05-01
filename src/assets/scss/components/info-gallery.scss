@@ -13,6 +13,8 @@
 	&__img{
 		display: block;
 		cursor: url(../img/ic-loup.png) 25 25, auto;
+
+		img{margin: 0 auto;}
 	}
 
 	&__label{
@@ -48,5 +50,30 @@
 		}
 
 		&:hover{background: $color-blue-hover;}
+	}
+}
+
+@media (max-width: 767px) {
+	.info-gallery{
+		padding-bottom: 10px;
+
+		.btn-arr{
+			width: 60px;
+			height: 60px;
+			background: #fff;
+			bottom: auto;
+			@include top-center;
+	
+			&_left{left: 0;}
+			&_right{right: 0;}
+	
+			.icon{
+				width: 9px;
+				fill: $color-blue;
+			}
+	
+			&:hover{background: $color-blue-hover;}
+			&:hover .icon{fill: #fff;}
+		}
 	}
 }
