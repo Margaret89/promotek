@@ -1,0 +1,43 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Наши проекты';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Проекты'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.page-title
+		.container
+			.row
+				.col-lg-8
+					h1 <b>Наши</b> проекты
+				
+	section.project-list
+		.container
+			.row
+				-
+					var list=[
+						{img:'project1.jpg', address:'Угольная Гавань, Санкт-Петербург', title:'Строительство складского комплекса'},
+						{img:'project4.jpg', address:'пос. Ленинское, Лен. область', title:'Строительство физкультурно-оздоровительного комплекса'},
+						{img:'project5.jpg', address:'Лен. область', title:'Строительство производственного цеха'},
+						{img:'project2.jpg', address:'Выборгское ш.', title:'Автосалон Audi'},
+						{img:'project3.jpg', address:'Мурино, Лен. область', title:'Строительство бетонного завода'},
+					]
+				
+				each item in list
+					.col-sm-6.col-lg-4
+						.project-item
+							a(href="#").project-item__img-wrap
+								span.project-item__img(style="background-image: url(assets/img/"+item.img+")")
+							
+							.project-item__content
+								.project-item__address= item.address
+								.project-item__title
+									a(href="#")= item.title
