@@ -1,0 +1,115 @@
+extends ../layout/main
+
+block variables
+	- var title = 'О компании';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'О компании'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.page-title
+		.container
+			.row
+				.col-lg-8
+					h1 <b>«ПромоТек»</b> — завод по производству ёмкостей из стеклопластика
+				
+	section.info
+		.container
+			.row
+				.col-12
+					p Накопительные емкости являются герметичными резервуарами, которые используются для сбора и хранения канализационных стоков или воды технического назначения. Чтобы снизить затраты на термозащиту, их, как правило, размещают под землей, отчего часто и называют «подземные емкости».
+			
+			.img-list
+				.row
+					.col-md-4
+						img(src="assets/img/about1.jpg", alt="")
+					.col-md-4
+						img(src="assets/img/about2.jpg", alt="")
+					.col-md-4
+						img(src="assets/img/about3.jpg", alt="")
+			
+			.row
+				.col-12
+					p Накопительные емкости являются герметичными резервуарами, которые используются для сбора и хранения канализационных стоков или воды технического назначения.
+	
+	section.services-wrap.bg-light-blue
+		.container
+			.row
+				.col-12
+					.h2 <b>Наши</b> услуги
+
+					p Компания ПромоТек готова предложить Вам полный спектр услуг по проектированию, вводу в эксплуатацию, обслуживанию и ремонту продукции компании, а именно:
+
+					.services-list
+						.services-list__item
+							.services-list__head
+								.services-list__num
+									.services-list__num-text 1
+								.services-list__title Проектирование
+
+							.row
+								.col-md-6
+									.h4 Основой для проектирования является:
+
+									ul
+										li Генеральный план с согласованной площадкой для оборудования (предоставляется заказчиком);согласованием и получением необходимой документации;
+										li Согласованное техническое задание на проектирование (предоставляется заказчиком);
+										li ТУ на подключение к сетям водоканала или согласованная в соответствующих инстанциях точка сброса в водный объект (предоставляется заказчиком)
+
+								.col-md-6
+									.h4 Мы всегда готовы Вам предложить:
+
+									ul
+										li Консультационные услуги по вопросам, связанным с проектированием очистных сооружений, выбором площадки для сооружений, составом оборудования, согласованием и получением необходимой документации;
+										li Разработку отдельных узлов оборудования для Вашего проекта;
+										li Разработку проектной документации в объёме, необходимом для согласования в органах государственной экспертизы
+						
+						.services-list__item
+							.services-list__head
+								.services-list__num
+									.services-list__num-text 2
+								.services-list__title Шеф-монтаж всех видов емкостей
+
+							
+							.h4 Мы всегда готовы Вам предложить:
+
+							ul
+								li Консультационные услуги по вопросам, связанным с проектированием очистных сооружений, выбором площадки для сооружений, составом оборудования, согласованием и получением необходимой документации;
+								li Разработку отдельных узлов оборудования для Вашего проекта;
+								li Разработку проектной документации в объёме, необходимом для согласования в органах государственной экспертизы
+
+	section.video-wrap
+		.container
+			.row
+				.col-12
+					.h2 <b>Как выглядит</b> наше производство?
+
+			.row
+				.col-md-10.offset-md-1
+					.video
+						iframe(src='https://www.youtube.com/embed/dl16e_mG6hg' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' frameborder='0')
+
+	section.certificates-wrap
+		.container
+			.row
+				.col-12
+					.h2 <b>Сертификаты</b>
+
+					.certificates-list
+						-
+							var list=[
+								{img:'certificate1.jpg'},
+								{img:'certificate1.jpg'},
+								{img:'certificate1.jpg'},
+							]
+
+						each item in list
+							a.certificates-list__item(href='assets/img/'+item.img, data-fancybox='certificates')
+								img(src='assets/img/'+item.img, alt='')
+
