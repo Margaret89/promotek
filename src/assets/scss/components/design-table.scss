@@ -1,0 +1,35 @@
+/*-------------- design-table -----------------*/
+.design-table{
+	width: 100%;
+	font-size: 1.6rem;
+	margin-bottom: 40px;
+
+	th,
+	td{
+		padding: 9px 15px;
+	}
+
+	th{
+		padding-top: 5px;
+		padding-bottom: 17px;
+	}
+
+	th:first-child,
+	td:first-child{
+		padding-left: 30px;
+	}
+
+	th:last-child,
+	td:last-child{
+		padding-right: 30px;
+	}
+
+	th{
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	tr{border-bottom: 1px solid $color-light-grey;}
+}
+
+h2 + .design-table, .h2 + .design-table{margin-top: -12px;}

@@ -1,0 +1,52 @@
+/*-------------- info-gallery -----------------*/
+.info-gallery{
+	display: none;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-bottom: 103px;
+
+	&.slick-initialized{display: block;}
+	.slick-track{display: flex;}
+
+	.slick-slide{margin: 0 15px;}
+
+	&__img{
+		display: block;
+		cursor: url(../img/ic-loup.png) 25 25, auto;
+	}
+
+	&__label{
+		@include font(normal, normal, 1.6rem, 1.625, $color-text);
+		text-align: center;
+		margin-top: 16px;
+	}
+
+	.btn-arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 50px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-size: 0;
+		background: $color-blue;
+		transition: background 0.2s ease 0s;
+		cursor: pointer;
+		position: absolute;
+		bottom: 0;
+		z-index: 10;
+
+		&_left{left: calc(50% - 105px);}
+		&_right{right: calc(50% - 105px);}
+
+		.icon{
+			fill: #fff;
+			transition: fill 0.2s ease 0s;
+		}
+
+		&:hover{background: $color-blue-hover;}
+	}
+}

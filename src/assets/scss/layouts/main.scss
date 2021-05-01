@@ -151,6 +151,13 @@ button.btn:hover{
 	animation: bgchange 2s linear infinite;
 }
 
+.btn_small,
+input[type="submit"].btn_small,
+button.btn_small{
+	height: 6rem;
+	line-height: 5.8rem;
+}
+
 .btn_border,
 input[type="submit"].btn_border,
 button.btn_border{
@@ -158,12 +165,6 @@ button.btn_border{
 	border: 1px solid $color-blue;
 	color: $color-blue;
 }
-
-// .btn_border:hover,
-// input[type="submit"].btn_border:hover,
-// button.btn_border:hover{
-// 	border: 1px solid $color-blue;
-// }
 
 @keyframes bgchange-white{
 	0%{background-color: #fff;}
@@ -224,7 +225,7 @@ button.btn_border.btn_white:hover{
 }
 
 .fancybox-content{
-	padding: 55px 30px 30px;
+	padding: 55px 40px 30px;
 	border: 2px solid $color-blue-hover;
 }
 

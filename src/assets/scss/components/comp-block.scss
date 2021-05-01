@@ -1,0 +1,36 @@
+/*-------------- comp-block -----------------*/
+.comp-block{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+
+	&__item{
+		width: 50%;
+		background: $color-light-blue;
+		padding: 51px 42px;
+	}
+
+	&__title{
+		@include font(normal, bold, 2.4rem, 1.25, $color-blue);
+		margin-bottom: 24px;
+	}
+
+	&__content{
+		@include font(normal, normal, 1.8rem, 1.67, $color-text);
+
+		p:last-child{margin-bottom: 0;}
+	}
+
+	&__item_blue{background: $color-blue url(../img/waves-blue.png) repeat 0 0;}
+
+	&__item_blue &__title,
+	&__item_blue &__content{
+		color: #fff;
+	}
+
+	&__img{
+		position: absolute;
+		bottom: -75px;
+		right: -245px;
+	}
+}

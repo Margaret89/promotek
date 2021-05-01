@@ -1,0 +1,251 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог детальная';
+
+block content
+	section.cat-detail
+		.container
+			.row
+				.col-3
+					ul.left-menu
+						-
+							var catalog=[
+								{
+									text:'Емкости',
+									sub:[
+										{text:'Накопительные', status:'active'},
+										{text:'Пожарные'},
+										{text:'Топливные'},
+										{text:'Химстойкие'},
+										{text:'Для питьевой воды'},
+									]
+								},
+								{
+									text:'Ливневые очистные сооружения',
+									sub:[
+										{text:'Комплексные системы очистки'},
+										{text:'Пескоотделители'},
+										{text:'Маслобензоотделители'},
+										{text:'Сорбционные блоки'},
+										{text:'Блоки УФО'},
+									]
+								},
+								{
+									text:'Насосные станции',
+									sub:[
+										{text:'Канализационные насосные станции'},
+										{text:'Станции пожаротушения'},
+										{text:'Станции повышения давления'},
+									]
+								},
+								{
+									text:'Канализация для частного дома',
+									sub:[
+										{text:'Септики'},
+										{text:'Станции биологической очистки'},
+										{text:'Биофильтры'},
+									]
+								},
+								{
+									text:'Крупные хозбытовые очистные сооружения',
+								},
+								{
+									text:'Очистные сооружения промышленных стоков',
+								},
+								{
+									text:'Жироотделители',
+								},
+								{
+									text:'Колодцы',
+								},
+								{
+									text:'Водоподготовка',
+								},
+							]
+
+						each cat in catalog
+							li.left-menu__item.js-left-menu-item
+								a(href="#").left-menu__link.js-left-menu-link= cat.text
+									if(cat.sub)
+										.left-menu__arr.js-left-menu-arr
+											+svg('ic-arrow-down','ic-arrow-down', '12', '8')
+
+								if(cat.sub)
+									ul.left-menu__sub.js-left-menu-sub
+										each sub in cat.sub
+											li.left-menu__sub-item(class=sub.status?'active':'')
+												a(href="#").left-menu__sub-link= sub.text
+
+				.col-9
+					-
+						var breadcrumbs=[
+							{href:'/',name:'Главная'},
+							{href:'#',name:'Продукция'},
+							{href:'#',name:'Емкостное оборудование'},
+							{href:'#',name:'Накопительные емкости'},
+						];
+
+					- var len=breadcrumbs.length
+					ul.breadcrumb
+						each item, index in breadcrumbs
+							if(len-1 != index)
+								li.breadcrumb__item
+									a(href="#").breadcrumb__link= item.name
+							else
+								li.breadcrumb__item
+									span= item.name
+
+					.cat-detail__title
+						h1 <b>Накопительные</b> емкости
+
+					.cat-detail-top
+						.cat-detail-top__text
+							p Накопительные емкости являются герметичными резервуарами, которые используются для сбора и хранения канализационных стоков или воды технического назначения. Чтобы снизить затраты на термозащиту, их, как правило, размещают под землей, отчего часто и называют «подземные емкости». Накопительные емкости применяются в местах, где отсутствует муниципальная канализация.
+
+							p Они могут оборудоваться устройством для контроля над переполнением, такой датчик может подавать сигнал, когда подземная ёмкость уже заполнена или за пару дней до этого. Накопительные емкости требуют периодического очищения, поэтому расположены в месте, к которому возможен свободный проезд машины для опорожнения. Емкости производятся объемом от 1000 до 100000л.
+
+						.cat-detail-top__img
+							img(src="assets/img/product.jpg", alt="")
+
+					.cat-detail-sect
+						.h2
+							b Размеры
+
+						table.design-table
+							thead
+								tr
+									th Объем, м<sup>3</sup>
+									th Диаметр корпуса, D, мм
+									th Длина корпуса, L, мм
+							tbody
+								-
+									var list=[
+										{col1:'5', col2:'1 600', col3:'2 700'},
+										{col1:'10', col2:'1 600', col3:'5 200'},
+										{col1:'15', col2:'1 800', col3:'6 200'},
+										{col1:'20', col2:'2 300', col3:'5 100'},
+										{col1:'25', col2:'2 300', col3:'6 300'},
+										{col1:'30', col2:'2 300', col3:'7 500'},
+										{col1:'40', col2:'2 300', col3:'9 900'},
+										{col1:'50', col2:'2 300', col3:'12 400'},
+										{col1:'60', col2:'3 000', col3:'9 000'},
+									]
+
+								each item in list
+									tr
+										td= item.col1
+										td= item.col2
+										td= item.col3
+
+						a.btn.btn_small(href='#') Узнать цену
+
+
+					.cat-detail-sect
+						.h2
+							b Схемы
+
+						p Схемы установки накопительных емкостей можно разделить по строительным и планировочным особенностям. По строительным особенностям схема может быть подземная, наземная и полузаглубленная (в обваловке).
+
+						-
+							var list=[
+								{title:'Подземная установка', text:'Текст'},
+								{title:'Наземная установка', text:'Классическим и наиболее надежным видом установки емкостей является подземная установка. В этом случае возможно размещение оборудования как под зеленой зоной, так и под проезжей частью. Именно такой тип установки позволяет экономить место за счет полезного использования пространства над емкостями - например организации парковки.'},
+								{title:'Полузаглубленная установка', text:'Текст'},
+								{title:'Параллельная установка', text:'Текст'},
+								{title:'Параллельно - последовательная установка', text:'Текст'},
+							]
+
+						each item in list
+							.unwrap-block.js-unwrap-block
+								.unwrap-block__head.js-unwrap-head
+									.unwrap-block__title= item.title
+									.unwrap-block__btn
+										+svg('ic-arrow-down','ic-arrow-down', '18', '12')
+
+								.unwrap-block__content.js-unwrap-content= item.text
+
+					.cat-detail-sect
+						.h2 <b>Виды</b> емкостей
+
+						.comp-block
+							.comp-block__item.comp-block__item_blue
+								.comp-block__title Горизонтальное исполнение
+								.comp-block__content Емкость горизонтального исполнения устанавливается на бетонную плиту и крепится стяжными ремнями. Для обслуживания емкости устанавливаются технические колодцы обслуживания. Высота технического колодца рассчитывается исходя из глубины залегания емкости. Вид технического колодца (под газон, под дорогу) выбирается согласно месту установки изделия.
+
+							.comp-block__item
+								.comp-block__title Вертикальное исполнение
+								.comp-block__content Вертикально исполнение емкости применяется при ограниченной площади для размещения оборудования. Для удобства обслуживания емкость может быть оборудована наружной лестницей из стеклопластика и площадкой обслуживания.
+
+							.comp-block__img
+								img(src="assets/img/helmet.png", alt="")
+
+
+					.cat-detail-sect
+						.h2
+							b Фотогалерея
+
+						.info-gallery.js-info-gallery
+							-
+								var list=[
+									{img:'info-gallery1.jpg', label:'Очистные сооружения для завода ПромоТек'},
+									{img:'info-gallery2.jpg', label:'Очистные сооружения для завода ПромоТек'},
+									{img:'info-gallery3.jpg', label:'Очистные сооружения для завода ПромоТек'},
+									{img:'info-gallery2.jpg', label:'Очистные сооружения для завода ПромоТек'},
+									{img:'info-gallery3.jpg', label:'Очистные сооружения для завода ПромоТек'},
+									{img:'info-gallery1.jpg', label:'Очистные сооружения для завода ПромоТек'},
+								]
+							each item in list
+								.info-gallery__item
+									a.info-gallery__img(href='assets/img/'+item.img data-fancybox='info-gal' data-caption=item.label)
+										img(src='assets/img/'+item.img alt='')
+
+									.info-gallery__label= item.label
+
+					.subscribe
+						.subscribe__img
+							img(src="assets/img/subscribe.png", alt="")
+
+						.subscribe__content
+							.subscribe__title <b>Получите расчет стоимости</b> оборудования
+
+							.subscribe__text Заполнить опросный лист онлайн для получения быстрого ответа
+
+							.subscribe__btn
+								a.btn(data-fancybox='' data-src='#find-price' href='javascript:;')
+									span.btn__text Заполнить опросный лист
+									span.btn__arr
+										+svg('ic-arrow-right','ic-arrow-right', '8', '12')
+							
+							.subscribe__note <b>или закажите</b> обратный звонок
+
+							form.subscribe-form
+								.subscribe-form__field
+									input.js-phone(type="text")
+								button.btn(type="submit") Заказать звонок
+
+	#find-price(style='display: none;')
+		.popup-form
+			.popup-form__title <b>Узнать</b> цену
+
+			form.form-site
+				.form-site__item
+					input(type="text", placeholder="Ваше имя")
+
+				.form-site__item
+					input.js-phone(type="text", placeholder="Телефон")
+
+				.form-site__item
+					select.js-select(data-placeholder="Выберите объем")
+						option
+						option(value="10") 10
+						option(value="20") 20
+						option(value="30") 30
+						option(value="40") 40
+
+
+				.form-site__btn
+					button.btn
+						span.btn__text Отправить запрос
+						span.btn__arr
+							+svg('ic-arrow-right','ic-arrow-right', '8', '12')

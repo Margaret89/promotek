@@ -1,5 +1,8 @@
 /*-------------- popup-form -----------------*/
 .popup-form{
+	width: 370px;
+	max-width: 100%;
+
 	&__title{
 		@include font(normal, 300, 3rem, 1.2, $color-text);
 		text-align: center;

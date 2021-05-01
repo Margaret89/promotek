@@ -1,0 +1,84 @@
+/*-------------- subscribe -----------------*/
+.subscribe{
+	background: $color-light-blue;
+	border: 8px solid #dce6fa;
+	padding: 38px 52px 120px;
+	margin: 80px 0;
+	position: relative;
+
+	&:last-child{margin-bottom: 0;}
+
+	&__img{
+		position: absolute;
+		bottom: 0;
+		right: -83px;
+	}
+
+	&__content{
+		position: relative;
+	}
+
+	&__title{
+		width: 70%;
+		@include font(normal, 300, 4rem, 1.3, $color-text);
+		margin-bottom: 2rem;
+
+		b{font-weight: 500;}
+	}
+
+	&__text{
+		max-width: 420px;
+		@include font(normal, normal, 1.8rem, 1.67, $color-text);
+		margin-bottom: 10px;
+	}
+
+	&__note{
+		@include font(normal, 300, 2.4rem, 1.3, $color-text);
+		margin-bottom: 10px;
+
+		b{font-weight: 500;}
+	}
+
+	&__btn{margin: 32px 0;}
+
+	.subscribe-form{margin-top: 34px;}
+}
+
+.subscribe-form{
+	display: flex;
+
+	input[type="text"],
+	input[type="email"]{
+		display: inline-block;
+		height: 6rem;
+		width: 300px;
+		font-family: $font-site;
+		@include font(normal, normal, 1.6rem, 5.6rem, $color-text);
+		padding: 0 30px;
+		border: 2px solid $color-blue;
+		outline: 0;
+		margin: 0;
+		background: #fff;
+		box-shadow: none;
+		transition: border 0.2s ease 0s;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus{
+		border-color: $color-blue-hover-light;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="number"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder,
+	textarea::placeholder{
+		color: #999999;
+	}
+
+	.btn{
+		height: 6rem;
+		line-height: 5.8rem;
+		padding: 0 30px;
+	}
+}

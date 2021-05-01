@@ -21,6 +21,17 @@ if($('.js-gal-slider').length){
 	});
 }
 
+// info gallery slider
+if($('.js-info-gallery').length){
+	$('.js-info-gallery').slick({
+		infinite: true,
+		slidesToShow: 3,
+  		slidesToScroll: 3,
+		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="12" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
+		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="12" height="18"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+	});
+}
+
 // partners slider
 if($('.js-partners-list').length){
 	$('.js-partners-list').slick({
@@ -139,5 +150,40 @@ if($('.js-project-slider').length){
 				}
 			},
 		]
+	});
+}
+
+// unwrap block
+if($('.js-unwrap-block').length){
+	$('.js-unwrap-head').on('click',function(event){
+		event.preventDefault();
+		var $parent = $(this).parents('.js-unwrap-block');
+		
+		$parent.toggleClass('opened');
+		if($parent.hasClass('opened')){
+			$parent.children('.js-unwrap-content').slideDown(300);
+		}else{
+			$parent.children('.js-unwrap-content').slideUp(300);
+		}
+	});
+}
+
+// show/hide left menu
+if($('.js-left-menu-arr').length){
+	$('.js-left-menu-arr').on('click', function(e){
+		e.preventDefault();
+		$(this).closest('.js-left-menu-item').toggleClass('.active');
+		$(this).closest('.js-left-menu-link').siblings('.js-left-menu-sub').slideToggle(300);
+	});
+}
+
+// custom select
+if ($('.js-select').length) {
+	$('.js-select').select2({
+		width: '100%',
+		minimumResultsForSearch: Infinity,
+		placeholder: function(){
+			$(this).attr('data-placeholder');
+		},
 	});
 }

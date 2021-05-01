@@ -1,0 +1,76 @@
+/*-------------- left-menu -----------------*/
+.left-menu{
+	background: #dce6fa;
+
+	&,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__item::before,
+	&__sub-item::before{
+		display: none;
+	}
+
+	&__link{
+		display: block;
+		padding: 17px 50px 18px 30px;
+		@include font(normal, bold, 1.8rem, 1.4, $color-blue);
+		text-decoration: none;
+		position: relative;
+		transition: background 0.2s ease 0s, color 0.2s ease 0s;
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 21px;
+		right: 27px;
+
+		.icon{
+			fill: $color-blue;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&__item.active &__arr .icon{transform: rotate(180deg);}
+
+	&__link:hover,
+	&__item.active &__link{
+		background: $color-blue;
+		color: #fff;
+	}
+
+	&__link:hover &__arr .icon,
+	&__item.active &__arr .icon{
+		fill: #fff;
+	}
+
+	&__item:not(:last-child){border-bottom: 1px solid #fff;}
+
+	&__sub{
+		display: none;
+		background: $color-blue-hover;
+		padding: 20px 0;
+	}
+
+	&__sub-link{
+		display: block;
+		padding: 6px 30px 6px;
+		@include font(normal, normal, 1.6rem, 1.5, #fff);
+		text-decoration: none;
+		position: relative;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__sub-link:hover,
+	&__sub-item.active &__sub-link{
+		color: $color-yellow;
+	}
+}
