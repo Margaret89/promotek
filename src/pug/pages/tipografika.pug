@@ -110,6 +110,25 @@ block content
 					option(value="30") 30
 					option(value="40") 40
 
+				br
+				br
+				.h2 Нестандартный radio
+					.input-radio
+						input#radio1(type='radio' name='param1')
+						label.input-radio__label(for='radio1')
+							span.input-radio__mark
+							span.input-radio__text Текст
+
+				br
+				br
+				.h2 Нестандартный checkbox
+					.input-check
+						input#check1(type='checkbox')
+						label.input-check__label(for='check1')
+							span.input-check__mark
+								+svg('ic-tick','ic-tick', '12', '10')
+							span.input-check__text Текст
+
 
 				br
 				br
@@ -194,3 +213,8 @@ block content
 						.type-icon__img
 							+svg('ic-call','ic-call', '18', '18')
 						.type-icon__name ic-call
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-tick','ic-tick', '12', '10')
+						.type-icon__name ic-tick

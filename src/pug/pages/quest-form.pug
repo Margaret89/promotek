@@ -1,0 +1,202 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Опросный лист';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Опросный лист'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.quest-form-wrap
+		.container
+			.row
+				.col-lg-9.col-xl-8
+					.h3 <b>Опросный лист на проектирование и изготовление</b> накопительной емкости, пожарного резервуара, топливной емкости, емкости для питьевой воды.
+
+					form.quest-form
+						.quest-form__item-wrap
+							.quest-form__item
+								.quest-form__label Заказчик
+
+								.quest-form__field
+									input(type="text")
+
+							.quest-form__item
+								.quest-form__label Адрес объекта
+
+								.quest-form__field
+									input(type="text", value="Санкт-Петербург, ул. Ленина 12")
+
+							.quest-form__item
+								.quest-form__label Контактное лицо
+
+								.quest-form__field
+									input(type="text")
+
+							.quest-form__item
+								.quest-form__label Телефон / факс / e-mail
+								
+								.quest-form__field
+									input(type="text")
+
+						.quest-form__item
+							.quest-form__label Объем емкости
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note м.куб.
+			
+						.quest-form__item
+							.quest-form__label Предполагаемый диаметр емкости
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note мм
+
+						.quest-form__item
+							.quest-form__label Вертикальная или горизонтальная емкость
+
+							.quest-form__field
+								.quest-form__check
+									.quest-form__check-item
+										.input-check
+											input#param11(type='checkbox')
+											label.input-check__label(for='param11')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Вертикальная
+				
+									.quest-form__check-item
+										.input-check
+											input#param12(type='checkbox')
+											label.input-check__label(for='param12')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Горизонтальная
+			
+						.quest-form__item
+							.quest-form__label Вертикальная или горизонтальная емкость
+
+							.quest-form__field
+								.quest-form__check.quest-form__check_col
+									.quest-form__check-item
+										.input-check
+											input#param21(type='checkbox')
+											label.input-check__label(for='param21')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Наземная
+					
+									.quest-form__check-item
+										.input-check
+											input#param22(type='checkbox')
+											label.input-check__label(for='param22')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text В помещении
+				
+									.quest-form__check-item
+										.input-check
+											input#param23(type='checkbox')
+											label.input-check__label(for='param23')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Подземная
+				
+									.quest-form__check-item
+										.input-check
+											input#param24(type='checkbox')
+											label.input-check__label(for='param24')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Автомобиль
+						
+						.quest-form__item
+							.quest-form__label Тип или химсостав жидкости
+
+							.quest-form__field
+								.quest-form__check
+									.quest-form__check-item
+										.input-check
+											input#param31(type='checkbox')
+											label.input-check__label(for='param31')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Тип
+				
+									.quest-form__check-item
+										.input-check
+											input#param32(type='checkbox')
+											label.input-check__label(for='param32')
+												span.input-check__mark
+													+svg('ic-tick','ic-tick', '12', '10')
+												span.input-check__text Химсостав
+				
+						.quest-form__item
+							.quest-form__label Максимальная температура жидкости 
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note ° С
+
+						.quest-form__item
+							.quest-form__label Возможное максимальное внутреннее давление
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note кг/см<sup>2</sup>
+
+						.quest-form__item
+							.quest-form__label Глубина залегания подводящей трубы для подземной установки
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note мм
+
+						.quest-form__item
+							.quest-form__label Диаметр входящей трубы
+
+							.quest-form__field
+								input(type="text")
+								.quest-form__note мм
+
+						.quest-form__item.quest-form__item_full
+							.quest-form__label Тип грунта:
+
+							.quest-form-choose
+								.quest-form-choose__item
+									.input-check
+										input#param41(type='checkbox')
+										label.input-check__label(for='param41')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '12', '10')
+											span.input-check__text Грунт плотностью не более 2100 кг/м2 (супесь, суглинок) с возможностью разделки стенок котлована под углом 450 и замещения грунта строительным песком
+
+								.quest-form-choose__item
+									.input-check
+										input#param42(type='checkbox')
+										label.input-check__label(for='param42')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '12', '10')
+											span.input-check__text Грунт плотностью свыше более 2100кг/м2 (глина) без возможности разделки стенок котлована под углом 450
+
+								.quest-form-choose__item
+									.input-check
+										input#param43(type='checkbox')
+										label.input-check__label(for='param43')
+											span.input-check__mark
+												+svg('ic-tick','ic-tick', '12', '10')
+											span.input-check__text Нестабильный грунт с необходимостью применения специальных мер по укреплению стенок котлована
+
+
+						.quest-form__btn
+							button(type="submit").btn(href='#')
+								span.btn__text Отправить
+								span.btn__arr
+									+svg('ic-arrow-right','ic-arrow-right', '8', '12')
